@@ -40,7 +40,10 @@ export function Header() {
           onClick={() => setOpen(false)}
           aria-label="Ir para o topo"
         >
-          <Logo />
+          <Logo variant="mark" width="2.25rem" />
+          <span className="ml-2.5 hidden text-sm font-semibold tracking-tight text-text sm:inline">
+            Nonitro Lab
+          </span>
         </Link>
 
         <nav
