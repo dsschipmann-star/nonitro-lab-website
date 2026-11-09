@@ -1,65 +1,83 @@
 import { siteConfig } from "@/lib/site-config";
 
+type Variant = "mark" | "wordmark" | "full";
+
 type Props = {
-  variant?: "full" | "mark";
+  variant?: Variant;
   className?: string;
-  /** Largura em CSS (ex.: "11rem", "180px"). Opcional — cada variante tem um default. */
-  width?: string;
+  /** Altura em CSS (ex.: "2.25rem"). Opcional — cada variante tem um default. */
+  height?: string;
 };
 
 /**
  * Logomarca oficial da Nonitro Lab.
  *
- * Usa a imagem de apresentação enviada pelo cliente
- * (`/brand/nonitro-lab-source.webp`, 1448×1086) recortada via
- * `background-position` para mostrar apenas a área útil da marca:
+ * Ativos vetoriais entregues pelo cliente:
+ *   • /brand/nonitro-mark.svg      — só o monograma N (353×317)
+ *   • /brand/nonitro-wordmark.svg  — só o texto NONITRO LAB (736×167)
  *
- *   • variant="mark" → somente o monograma N (com detalhe de controle)
- *   • variant="full" → monograma + wordmark NONITRO LAB + tagline
- *
- * Coordenadas de crop derivadas por análise de luminância da imagem fonte
- * (ver histórico do commit). Quando o cliente entregar os ativos exportados
- * (SVG ou PNG transparente separados), substitua o `background-*` por um
- * `<Image>` apontando para o arquivo final — o restante do site não muda.
+ * Variantes:
+ *   • "mark"     → só o monograma N
+ *   • "wordmark" → só o texto NONITRO LAB
+ *   • "full"     → monograma + wordmark lado a lado
  */
-export function Logo({ variant = "full", className = "", width }: Props) {
-  const common = {
-    display: "inline-block",
-    backgroundImage: "url(/brand/nonitro-lab-source.webp)",
-    backgroundRepeat: "no-repeat",
-  } as const;
-
+export function Logo({ variant = "mark", className = "", height }: Props) {
   if (variant === "mark") {
-    // Crop com padding: x=546..892 (w=346), y=237..488 (h=251)
     return (
-      <span
-        role="img"
-        aria-label={siteConfig.name}
-        className={`shrink-0 ${className}`}
-        style={{
-          ...common,
-          width: width ?? "2.5rem",
-          aspectRatio: "346 / 251",
-          backgroundSize: "418.5% auto",
-          backgroundPosition: "49.55% 28.38%",
-        }}
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src="/brand/nonitro-mark.svg"
+        alt={siteConfig.name}
+        width={353}
+        height={317}
+        className={`block w-auto shrink-0 ${className}`}
+        style={{ height: height ?? "2.25rem" }}
       />
     );
   }
 
-  // full — crop com padding: x=312..1135 (w=823), y=227..776 (h=549)
+  if (variant === "wordmark") {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src="/brand/nonitro-wordmark.svg"
+        alt={siteConfig.name}
+        width={736}
+        height={167}
+        className={`block w-auto shrink-0 ${className}`}
+        style={{ height: height ?? "2rem" }}
+      />
+    );
+  }
+
+  // full → mark + wordmark lado a lado
+  const h = height ?? "2.5rem";
   return (
     <span
-      role="img"
+      className={`inline-flex items-center gap-3 ${className}`}
       aria-label={siteConfig.name}
-      className={`shrink-0 ${className}`}
-      style={{
-        ...common,
-        width: width ?? "10rem",
-        aspectRatio: "823 / 549",
-        backgroundSize: "175.9% auto",
-        backgroundPosition: "49.92% 42.27%",
-      }}
-    />
+      role="img"
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/brand/nonitro-mark.svg"
+        alt=""
+        width={353}
+        height={317}
+        className="block w-auto shrink-0"
+        style={{ height: h }}
+        aria-hidden="true"
+      />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/brand/nonitro-wordmark.svg"
+        alt=""
+        width={736}
+        height={167}
+        className="block w-auto shrink-0"
+        style={{ height: `calc(${h} * 0.62)` }}
+        aria-hidden="true"
+      />
+    </span>
   );
 }

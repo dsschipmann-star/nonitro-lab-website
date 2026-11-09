@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="353" height="317" viewBox="0 0 353 317">
+<defs>
+ <linearGradient id="base" x1="0%" y1="0%" x2="100%" y2="75%"><stop stop-color="#078FFF"/><stop offset=".48" stop-color="#3964FF"/><stop offset=".7" stop-color="#7744F0"/><stop offset="1" stop-color="#A02AFF"/></linearGradient>
+ <linearGradient id="top" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#2CE4FA"/><stop offset=".5" stop-color="#5379FF"/><stop offset="1" stop-color="#BC48F7"/></linearGradient>
+ <linearGradient id="side" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#034AC9"/><stop offset="1" stop-color="#23076D"/></linearGradient>
+ <clipPath id="shape"><path fill-rule="evenodd" d="M340,9 L339,9 L278,70 L278,71 L239,110 L238,110 L238,111 L218,131 L221,134 L221,135 L226,141 L227,144 L229,146 L231,150 L237,157 L237,158 L242,164 L242,165 L246,169 L246,170 L248,172 L250,176 L254,180 L254,181 L257,184 L257,185 L259,187 L261,191 L264,194 L264,195 L268,200 L268,206 L269,207 L269,218 L268,219 L233,185 L232,185 L211,164 L210,164 L209,162 L208,162 L180,134 L179,134 L159,114 L158,114 L139,95 L138,95 L117,74 L11,74 L11,306 L61,306 L62,307 L64,306 L65,307 L67,307 L68,306 L73,306 L74,307 L80,307 L82,306 L83,304 L86,301 L87,301 L98,290 L98,175 L97,174 L98,172 L105,179 L106,179 L111,184 L111,185 L112,185 L169,242 L170,242 L235,307 L237,306 L238,307 L239,306 L338,306 L339,307 L340,306Z"/></clipPath>
+</defs>
+<g clip-path="url(#shape)">
+ <path fill="url(#base)" d="M340,9 L339,9 L278,70 L278,71 L239,110 L238,110 L238,111 L218,131 L221,134 L221,135 L226,141 L227,144 L229,146 L231,150 L237,157 L237,158 L242,164 L242,165 L246,169 L246,170 L248,172 L250,176 L254,180 L254,181 L257,184 L257,185 L259,187 L261,191 L264,194 L264,195 L268,200 L268,206 L269,207 L269,218 L268,219 L233,185 L232,185 L211,164 L210,164 L209,162 L208,162 L180,134 L179,134 L159,114 L158,114 L139,95 L138,95 L117,74 L11,74 L11,306 L61,306 L62,307 L64,306 L65,307 L67,307 L68,306 L73,306 L74,307 L80,307 L82,306 L83,304 L86,301 L87,301 L98,290 L98,175 L97,174 L98,172 L105,179 L106,179 L111,184 L111,185 L112,185 L169,242 L170,242 L235,307 L237,306 L238,307 L239,306 L338,306 L339,307 L340,306Z" fill-rule="evenodd"/>
+ <path fill="url(#top)" opacity=".92" d="M 11 64 L 100 64 L 335 300 L 280 250 L 104 110 Z"/>
+ <path fill="#055DDE" opacity=".45" d="M 11 64 L 70 125 L 70 318 L 11 318 Z"/>
+ <path fill="url(#side)" opacity=".48" d="M 70 125 L 99 145 L 99 317 L 70 317 Z"/>
+ <path fill="#36079B" opacity=".3" d="M 195 122 L 295 300 L 341 300 L 273 150 Z"/>
+</g>
+<g fill="white"><circle cx="277" cy="97" r="8.5"/><circle cx="259" cy="118" r="8.5"/><circle cx="294" cy="118" r="8.5"/><circle cx="277" cy="138" r="8.5"/></g>
+</svg>
