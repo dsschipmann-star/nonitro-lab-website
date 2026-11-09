@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  body {
+    @apply bg-bg text-text font-sans;
+    background-image:
+      radial-gradient(ellipse 60% 40% at 50% -10%, rgba(121, 87, 255, 0.18), transparent 60%),
+      radial-gradient(ellipse 50% 30% at 90% 10%, rgba(22, 139, 255, 0.12), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(22, 139, 255, 0.35);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.brand.blueSoft");
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply mx-auto w-full max-w-5xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white
+      bg-brand-gradient shadow-glow transition-transform duration-200 will-change-transform
+      hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-medium
+      text-text-muted transition-colors duration-200 hover:text-text hover:border-line-strong;
+  }
+
+  .text-gradient {
+    @apply bg-text-gradient bg-clip-text text-transparent;
+  }
+
+  .surface-card {
+    @apply relative rounded-2xl border border-line bg-bg-surface/80 p-6 shadow-card backdrop-blur-sm
+      transition-colors duration-200;
+  }
+
+  .surface-card:hover {
+    @apply border-line-strong;
+  }
+
+  .divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-line-strong to-transparent;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-line bg-bg-surface/70 px-3 py-1
+      text-xs font-medium uppercase tracking-[0.18em] text-text-muted;
+  }
+}
+
+@layer utilities {
+  .bg-dots {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+  }
+}
