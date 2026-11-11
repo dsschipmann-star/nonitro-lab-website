@@ -40,9 +40,12 @@ export function Header() {
           onClick={() => setOpen(false)}
           aria-label="Ir para o topo"
         >
-          <Logo variant="mark" height="2.25rem" />
-          <span className="ml-2.5 hidden text-sm font-semibold tracking-tight text-text sm:inline">
-            Nonitro Lab
+          {/* No mobile só o monograma (compacto); no sm+ a horizontal completa. */}
+          <span className="sm:hidden">
+            <Logo variant="mark" height="2.25rem" />
+          </span>
+          <span className="hidden sm:inline-flex">
+            <Logo variant="horizontal" height="2.25rem" />
           </span>
         </Link>
 

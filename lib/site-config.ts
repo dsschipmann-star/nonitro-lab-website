@@ -34,10 +34,24 @@ export const siteConfig = {
   },
 
   contact: {
-    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "",
-    instagramHandle: process.env.NEXT_PUBLIC_INSTAGRAM_HANDLE ?? "",
+    // Número no formato internacional (DDI 55 + DDD + número), só dígitos.
+    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5548999743950",
+    instagramHandle: process.env.NEXT_PUBLIC_INSTAGRAM_HANDLE ?? "@nonitrolab",
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "",
   },
+
+  /**
+   * Depoimentos reais de clientes. Preencher assim que os textos
+   * estiverem prontos para publicar.
+   *
+   * Formato: { name, rating (1–5), text, source? }
+   */
+  testimonials: [] as ReadonlyArray<{
+    name: string;
+    rating: 1 | 2 | 3 | 4 | 5;
+    text: string;
+    source?: string;
+  }>,
 
   nav: [
     { href: "#inicio", label: "Início" },
