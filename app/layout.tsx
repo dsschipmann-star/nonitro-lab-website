@@ -60,6 +60,11 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
     },
   },
+  verification: {
+    other: {
+      "facebook-domain-verification": "w008rfur2ynnahfoms76m8oahxj12u",
+    },
+  },
 };
 
 export default function RootLayout({
