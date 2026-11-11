@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, MessageCircle, Mail, MapPin } from "lucide-react";
+import { Instagram, MessageCircle, Mail, MapPin, Facebook } from "lucide-react";
 import { Logo } from "./Logo";
 import { siteConfig } from "@/lib/site-config";
 import { whatsappLink, whatsappMessages } from "@/lib/whatsapp";
@@ -49,6 +49,17 @@ export function Footer() {
                 >
                   <Instagram className="size-3.5" aria-hidden="true" />
                   Instagram
+                </a>
+              )}
+              {contact.facebookUrl && (
+                <a
+                  href={contact.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-line bg-bg-surface/60 px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-line-strong hover:text-text"
+                >
+                  <Facebook className="size-3.5" aria-hidden="true" />
+                  Facebook
                 </a>
               )}
               {contact.email && (

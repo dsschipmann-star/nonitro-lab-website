@@ -37,6 +37,9 @@ export const siteConfig = {
     // Número no formato internacional (DDI 55 + DDD + número), só dígitos.
     whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5548999743950",
     instagramHandle: process.env.NEXT_PUBLIC_INSTAGRAM_HANDLE ?? "@nonitrolab",
+    facebookUrl:
+      process.env.NEXT_PUBLIC_FACEBOOK_URL ??
+      "https://www.facebook.com/profile.php?id=61578198160158",
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "",
   },
 

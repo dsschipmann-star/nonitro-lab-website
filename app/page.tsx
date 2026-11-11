@@ -7,7 +7,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Faq } from "@/components/Faq";
 import { FinalCta } from "@/components/FinalCta";
 import { Footer } from "@/components/Footer";
-import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { SocialDock } from "@/components/SocialDock";
 import { LocalBusinessJsonLd } from "@/components/LocalBusinessJsonLd";
 
 export default function HomePage() {
@@ -25,7 +25,7 @@ export default function HomePage() {
         <FinalCta />
       </main>
       <Footer />
-      <WhatsAppFloat />
+      <SocialDock />
     </>
   );
 }

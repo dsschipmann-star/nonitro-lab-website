@@ -47,10 +47,17 @@ export function LocalBusinessJsonLd() {
     ];
   }
 
+  const sameAs: string[] = [];
   if (contact.instagramHandle) {
-    payload.sameAs = [
+    sameAs.push(
       `https://instagram.com/${contact.instagramHandle.replace(/^@/, "")}`,
-    ];
+    );
+  }
+  if (contact.facebookUrl) {
+    sameAs.push(contact.facebookUrl);
+  }
+  if (sameAs.length > 0) {
+    payload.sameAs = sameAs;
   }
 
   if (reviews.count > 0) {
