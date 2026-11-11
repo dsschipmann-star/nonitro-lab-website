@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/site-config";
  * aqui enquanto não confirmados pelo cliente.
  */
 export function LocalBusinessJsonLd() {
-  const { name, description, url, location, contact } = siteConfig;
+  const { name, description, url, location, contact, reviews } = siteConfig;
 
   const payload: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -51,6 +51,16 @@ export function LocalBusinessJsonLd() {
     payload.sameAs = [
       `https://instagram.com/${contact.instagramHandle.replace(/^@/, "")}`,
     ];
+  }
+
+  if (reviews.count > 0) {
+    payload.aggregateRating = {
+      "@type": "AggregateRating",
+      ratingValue: reviews.average.toFixed(1),
+      reviewCount: reviews.count,
+      bestRating: "5",
+      worstRating: "1",
+    };
   }
 
   return (

@@ -41,16 +41,81 @@ export const siteConfig = {
   },
 
   /**
-   * Depoimentos reais de clientes. Preencher assim que os textos
-   * estiverem prontos para publicar.
-   *
-   * Formato: { name, rating (1–5), text, source? }
+   * Agregado das avaliações reais dos clientes. Fonte: Google.
+   * Atualizar manualmente conforme a ficha for recebendo novas avaliações.
    */
-  testimonials: [] as ReadonlyArray<{
+  reviews: {
+    average: 5.0,
+    count: 93,
+    source: "Google",
+  },
+
+  /**
+   * Depoimentos reais exibidos no site. Transcritos do Google quase
+   * na íntegra. Edições mínimas:
+   *   • Remoção de nomes de ex-colaboradores quando citados.
+   *   • Pequenas correções ortográficas, mantendo o tom do cliente.
+   */
+  testimonials: [
+    {
+      name: "Alessandro Carvalho",
+      rating: 5,
+      text: "O atendimento foi excepcional. Nível de atenção e educação muito acima da média, prestatividade e competência.",
+      when: "há 4 meses",
+    },
+    {
+      name: "João Pedro Nunes Barbieri",
+      rating: 5,
+      text: "Realizei troca de vidro da câmera (estava em péssimo estado pois quebrou há muitos meses) e reparo no conector de carregamento. Câmera ficou perfeita e celular voltou a carregar rapidinho como era antes. Serviço efetuado bem rápido e com valor justo e condizente.",
+      when: "há 3 meses",
+    },
+    {
+      name: "Henrique Mendonça Alves Vieira",
+      rating: 5,
+      text: "Deixei meu notebook para a troca de pasta térmica com o Mateus. Além do procedimento ter sido MUITO rápido, pessoal super acolhedor e receptivo. Limparam todo o note e me devolveram brilhando! Aplicaram uma pasta térmica nova de qualidade.",
+      when: "há 4 meses",
+    },
+    {
+      name: "Yasmim Santos",
+      rating: 5,
+      text: "Ótima assistência, diria perfeita na verdade. Me ajudaram muito — comprei um celular e 1 hora depois foi bloqueado, achei que nem teria mais solução, até que achei essa assistência e eles me deram todo o suporte necessário.",
+      when: "há 4 meses",
+    },
+    {
+      name: "Churrascaria Braza",
+      rating: 5,
+      text: "Saio de longe só pra fazer serviços com vocês. Qualidade e preço bate de frente com qualquer loja de alto padrão.",
+      when: "há 8 meses",
+    },
+    {
+      name: "Valdir Batista",
+      rating: 5,
+      text: "Serviço pra relógio de corrida que recomendo. Ótimo atendimento! Pensei que meu relógio era placa; após avaliação o técnico me ofereceu uma troca de bateria pra ver se não era a causa do problema. Após a troca, resultado positivo e preço justo.",
+      when: "há 1 ano",
+    },
+    {
+      name: "Marilene Schutz da Silva",
+      rating: 5,
+      text: "Satisfeita com o serviço, Mateus foi muito atencioso e prestativo, super indico a empresa!",
+      when: "há 1 ano",
+    },
+    {
+      name: "Natan Marçal",
+      rating: 5,
+      text: "São muito empenhados e atenciosos, estou extremamente satisfeito.",
+      when: "há 1 ano",
+    },
+    {
+      name: "Eloy Luchtenberg",
+      rating: 5,
+      text: "Apenas uma palavra para definir esta empresa: HONESTIDADE.",
+      when: "há 1 ano",
+    },
+  ] as ReadonlyArray<{
     name: string;
     rating: 1 | 2 | 3 | 4 | 5;
     text: string;
-    source?: string;
+    when: string;
   }>,
 
   nav: [
@@ -58,6 +123,7 @@ export const siteConfig = {
     { href: "#servicos", label: "Serviços" },
     { href: "#diferenciais", label: "Diferenciais" },
     { href: "#como-funciona", label: "Como funciona" },
+    { href: "#depoimentos", label: "Depoimentos" },
     { href: "#duvidas", label: "Dúvidas" },
   ],
 
