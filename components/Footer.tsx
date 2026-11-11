@@ -18,8 +18,8 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-line bg-bg-soft/60">
-      <div className="container py-16">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
+      <div className="container py-12 sm:py-16">
+        <div className="grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <Logo variant="full" height="2.75rem" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-text-muted">
@@ -123,14 +123,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="divider my-10" />
+        <div className="divider my-8 sm:my-10" />
 
-        <div className="flex flex-col items-start justify-between gap-4 text-xs text-text-dim sm:flex-row sm:items-center">
+        <div className="text-xs text-text-dim">
           <p>
             © {year} {siteConfig.name}. Todos os direitos reservados.
-          </p>
-          <p>
-            Feito com atenção técnica em {location.city}, {location.state}.
           </p>
         </div>
       </div>

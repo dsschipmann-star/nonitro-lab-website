@@ -116,9 +116,9 @@ export function Faq() {
                   aria-expanded={isOpen}
                   aria-controls={`faq-panel-${i}`}
                   id={`faq-trigger-${i}`}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left transition-colors hover:bg-bg-raised/40 sm:px-6"
+                  className="flex w-full items-center justify-between gap-3 px-4 py-4 text-left transition-colors hover:bg-bg-raised/40 sm:gap-4 sm:px-6 sm:py-5"
                 >
-                  <span className="text-base font-medium text-text sm:text-lg">
+                  <span className="text-sm font-medium text-text sm:text-lg">
                     {item.q}
                   </span>
                   <span
@@ -143,7 +143,7 @@ export function Faq() {
                     transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="px-5 pb-6 pr-8 text-sm leading-relaxed text-text-muted sm:px-6 sm:text-base">
+                    <div className="px-4 pb-5 pr-6 text-sm leading-relaxed text-text-muted sm:px-6 sm:pb-6 sm:pr-8 sm:text-base">
                       {item.a}
                     </div>
                   </motion.div>

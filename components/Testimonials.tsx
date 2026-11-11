@@ -50,10 +50,10 @@ export function Testimonials() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto mb-12 flex max-w-xl flex-col items-center gap-3 rounded-2xl border border-line bg-bg-surface/60 px-6 py-5 text-center backdrop-blur-sm sm:flex-row sm:text-left"
+        className="mx-auto mb-10 flex max-w-xl flex-col items-center gap-3 rounded-2xl border border-line bg-bg-surface/60 px-5 py-4 text-center backdrop-blur-sm sm:mb-12 sm:flex-row sm:gap-4 sm:px-6 sm:py-5 sm:text-left"
       >
         <div className="flex items-baseline gap-2">
-          <span className="text-4xl font-semibold text-gradient">
+          <span className="text-3xl font-semibold text-gradient sm:text-4xl">
             {reviews.average.toFixed(1).replace(".", ",")}
           </span>
           <Stars count={Math.round(reviews.average)} />

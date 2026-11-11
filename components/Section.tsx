@@ -23,12 +23,12 @@ export function Section({
   return (
     <section
       id={id}
-      className={`relative py-20 sm:py-28 ${className ?? ""}`}
+      className={`relative py-16 sm:py-24 lg:py-28 ${className ?? ""}`}
       aria-labelledby={id ? `${id}-title` : undefined}
     >
       <div className="container">
         {(eyebrow || title || description) && (
-          <header className={`mx-auto mb-14 flex max-w-2xl flex-col gap-4 ${alignCls}`}>
+          <header className={`mx-auto mb-10 sm:mb-14 flex max-w-2xl flex-col gap-4 ${alignCls}`}>
             {eyebrow && <span className="eyebrow">{eyebrow}</span>}
             {title && (
               <h2

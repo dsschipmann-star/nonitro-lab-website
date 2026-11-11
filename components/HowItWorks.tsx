@@ -65,18 +65,18 @@ export function HowItWorks() {
               delay: i * 0.08,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="relative mb-4 flex gap-5 rounded-2xl border border-line bg-bg-surface/60 p-5 last:mb-0 md:gap-6 md:p-6"
+            className="relative mb-3 flex gap-4 rounded-2xl border border-line bg-bg-surface/60 p-4 last:mb-0 sm:mb-4 sm:gap-5 sm:p-5 md:gap-6 md:p-6"
           >
             <div className="relative shrink-0">
-              <div className="inline-flex size-12 items-center justify-center rounded-xl bg-brand-gradient text-white shadow-[0_10px_30px_-10px_rgba(22,139,255,0.6)]">
+              <div className="inline-flex size-11 items-center justify-center rounded-xl bg-brand-gradient text-white shadow-[0_10px_30px_-10px_rgba(22,139,255,0.6)] sm:size-12">
                 <step.icon className="size-5" aria-hidden="true" />
               </div>
               <span className="absolute -right-1 -top-1 inline-flex size-5 items-center justify-center rounded-full border border-line bg-bg text-[10px] font-semibold text-text-muted">
                 {String(i + 1).padStart(2, "0")}
               </span>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold text-text">{step.title}</h3>
+            <div className="min-w-0">
+              <h3 className="text-base font-semibold text-text sm:text-lg">{step.title}</h3>
               <p className="mt-1 text-sm leading-relaxed text-text-muted">
                 {step.text}
               </p>
@@ -85,8 +85,8 @@ export function HowItWorks() {
         ))}
       </ol>
 
-      <div className="mx-auto mt-10 max-w-4xl">
-        <div className="flex flex-col gap-4 rounded-2xl border border-brand-blue/30 bg-gradient-to-br from-brand-blue/10 via-bg-surface/50 to-brand-purple/10 p-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto mt-8 max-w-4xl sm:mt-10">
+        <div className="flex flex-col gap-4 rounded-2xl border border-brand-blue/30 bg-gradient-to-br from-brand-blue/10 via-bg-surface/50 to-brand-purple/10 p-5 sm:p-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-start gap-3">
             <Info
               className="mt-0.5 size-5 shrink-0 text-brand-blueSoft"
@@ -105,7 +105,7 @@ export function HowItWorks() {
             href={whatsappLink(whatsappMessages.default)}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary shrink-0"
+            className="btn-primary w-full shrink-0 sm:w-auto"
           >
             Iniciar atendimento
           </a>

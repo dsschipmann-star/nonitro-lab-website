@@ -79,7 +79,7 @@ export function Services() {
       title={<>Reparos certos para cada tipo de equipamento.</>}
       description="Atendemos as principais categorias de eletrônicos de consumo com atenção técnica individualizada por tipo de aparelho."
     >
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
         {services.map((service, i) => (
           <motion.article
             key={service.title}
