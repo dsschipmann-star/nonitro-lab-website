@@ -494,7 +494,7 @@ function swapIn(
 /**
  * Troca o celular procedural pelo modelo em /models/iphone.glb:
  * "iPhone 18 Pro Max - High Quality 3D Model", de Pro Animator
- * (sketchfab.com/Riju.mandal), licença CC BY 4.0. Crédito no rodapé.
+ * (sketchfab.com/Riju.mandal), licença CC BY 4.0. Crédito em public/models/CREDITS.txt.
  */
 export async function upgradePhone(model: DeviceModel) {
   const gltf = await new GLTFLoader().loadAsync("/models/iphone.glb");
@@ -1131,7 +1131,7 @@ function controllerAnchors(): Record<string, Anchor> {
 /**
  * Troca o controle simples pelo modelo em /models/controller.glb:
  * "Sony PS5 DualSense Controller", de Jayakrishnan Marath
- * (sketchfab.com/jayhystic22), licença CC BY 4.0. Crédito no rodapé.
+ * (sketchfab.com/jayhystic22), licença CC BY 4.0. Crédito em public/models/CREDITS.txt.
  * O arquivo publicado é uma versão com texturas reduzidas do original.
  */
 export async function upgradeController(model: DeviceModel) {
@@ -1219,7 +1219,7 @@ function swapAnchorsOnly(model: DeviceModel, obj: THREE.Object3D) {
 /**
  * Troca o gabinete simples pelo modelo em /models/pc.glb:
  * "Pc Gamer (Animation)", de Caio de Oliveira (sketchfab.com/caio17011),
- * licença CC BY 4.0. Crédito no rodapé. O arquivo publicado é uma versão
+ * licença CC BY 4.0. Crédito em public/models/CREDITS.txt. O arquivo publicado é uma versão
  * com texturas reduzidas do original. A animação gira as ventoinhas.
  */
 export async function upgradePC(model: DeviceModel) {
