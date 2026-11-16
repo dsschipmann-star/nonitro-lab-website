@@ -140,6 +140,46 @@ export function Footer() {
           <p>
             © {year} {siteConfig.name}. Todos os direitos reservados.
           </p>
+          <p className="mt-2">
+            Modelos 3D:{" "}
+            <a
+              href="https://sketchfab.com/3d-models/iphone-18-pro-max-high-quality-3d-model-5e40716caa274a789de5b17798ee2e78"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 transition-colors hover:text-text"
+            >
+              iPhone 18 Pro Max, High Quality 3D Model
+            </a>
+            , de Pro Animator, e{" "}
+            <a
+              href="https://sketchfab.com/3d-models/sony-ps5-dualsense-controller-b1d054ee67204ec1984d5fbebd707cde"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 transition-colors hover:text-text"
+            >
+              Sony PS5 DualSense Controller
+            </a>
+            , de Jayakrishnan Marath, e{" "}
+            <a
+              href="https://sketchfab.com/3d-models/pc-gamer-animation-f19fd9e129ba43c09ced9483554aa756"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 transition-colors hover:text-text"
+            >
+              Pc Gamer (Animation)
+            </a>
+            , de Caio de Oliveira (os dois últimos com texturas reduzidas).
+            Licença{" "}
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 transition-colors hover:text-text"
+            >
+              CC BY 4.0
+            </a>
+            .
+          </p>
         </div>
       </div>
     </footer>

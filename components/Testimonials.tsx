@@ -53,7 +53,7 @@ export function Testimonials() {
         className="mx-auto mb-10 flex max-w-xl flex-col items-center gap-3 rounded-2xl border border-line bg-bg-surface/60 px-5 py-4 text-center backdrop-blur-sm sm:mb-12 sm:flex-row sm:gap-4 sm:px-6 sm:py-5 sm:text-left"
       >
         <div className="flex items-baseline gap-2">
-          <span className="text-3xl font-semibold text-gradient sm:text-4xl">
+          <span className="font-display text-5xl font-semibold text-gradient sm:text-6xl">
             {reviews.average.toFixed(1).replace(".", ",")}
           </span>
           <Stars count={Math.round(reviews.average)} />
@@ -68,19 +68,49 @@ export function Testimonials() {
         </div>
       </motion.div>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {testimonials.map((t, i) => (
-          <motion.figure
-            key={`${t.name}-${i}`}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{
-              duration: 0.55,
-              delay: Math.min(i, 5) * 0.04,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="surface-card relative flex h-full flex-col"
+      <TestimonialRows />
+    </Section>
+  );
+}
+
+type Testimonial = (typeof siteConfig.testimonials)[number];
+
+/** Duas esteiras em sentidos opostos; pausam ao passar o mouse ou focar. */
+function TestimonialRows() {
+  const { testimonials } = siteConfig;
+  const half = Math.ceil(testimonials.length / 2);
+  const rows = [testimonials.slice(0, half), testimonials.slice(half)];
+
+  return (
+    <div className="relative left-1/2 w-screen -translate-x-1/2 space-y-4 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)] sm:space-y-6">
+      {rows.map((row, r) => (
+        <div
+          key={r}
+          className={`flex w-max hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] ${
+            r === 0 ? "animate-marquee-slow" : "animate-marquee-slow-reverse"
+          }`}
+        >
+          {[0, 1].map((copy) => (
+            <div
+              key={copy}
+              aria-hidden={copy === 1}
+              className="flex shrink-0 gap-4 pr-4 sm:gap-6 sm:pr-6"
+            >
+              {row.map((t) => (
+                <TestimonialCard key={t.name} t={t} />
+              ))}
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function TestimonialCard({ t }: { t: Testimonial }) {
+  return (
+          <figure
+            className="surface-card relative flex w-[80vw] max-w-[380px] shrink-0 flex-col sm:w-[380px]"
           >
             <Quote
               className="absolute right-5 top-5 size-6 text-brand-blue/20"
@@ -104,9 +134,6 @@ export function Testimonials() {
                 <p className="text-xs text-text-dim">{t.when}</p>
               </div>
             </figcaption>
-          </motion.figure>
-        ))}
-      </div>
-    </Section>
+          </figure>
   );
 }

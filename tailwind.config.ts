@@ -67,10 +67,22 @@ const config: Config = {
           "0%, 100%": { opacity: "0.6" },
           "50%": { opacity: "1" },
         },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
       },
       animation: {
         "fade-in": "fade-in 600ms ease-out both",
         "pulse-soft": "pulse-soft 3s ease-in-out infinite",
+        marquee: "marquee 38s linear infinite",
+        "marquee-slow": "marquee 70s linear infinite",
+        "marquee-slow-reverse": "marquee 80s linear infinite reverse",
+        float: "float 5s ease-in-out infinite",
       },
     },
   },
