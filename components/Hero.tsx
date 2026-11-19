@@ -339,7 +339,7 @@ export function Hero() {
               touched ? "opacity-0" : "opacity-100"
             }`}
           >
-            <span className="flex items-center gap-2 rounded-full border border-line bg-bg/60 px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] text-text-muted backdrop-blur">
+            <span className="flex items-center gap-2 glass rounded-full px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] text-text-muted">
               <Hand className="size-3.5 animate-pulse" />
               Arraste para girar · toque nas peças
             </span>
@@ -350,7 +350,7 @@ export function Hero() {
             type="button"
             onClick={() => goTo(index - 1)}
             aria-label="Aparelho anterior"
-            className="absolute left-0 top-1/2 z-20 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-line-strong bg-bg/70 text-text backdrop-blur transition-colors hover:bg-bg-raised"
+            className="absolute left-0 top-1/2 z-20 inline-flex size-11 -translate-y-1/2 items-center justify-center glass-button rounded-full text-text"
           >
             <ChevronLeft className="size-5" aria-hidden="true" />
           </button>
@@ -358,7 +358,7 @@ export function Hero() {
             type="button"
             onClick={() => goTo(index + 1)}
             aria-label="Próximo aparelho"
-            className="absolute right-0 top-1/2 z-20 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-line-strong bg-bg/70 text-text backdrop-blur transition-colors hover:bg-bg-raised"
+            className="absolute right-0 top-1/2 z-20 inline-flex size-11 -translate-y-1/2 items-center justify-center glass-button rounded-full text-text"
           >
             <ChevronRight className="size-5" aria-hidden="true" />
           </button>
@@ -369,7 +369,7 @@ export function Hero() {
             aria-label="Escolha o aparelho"
             className="absolute inset-x-0 bottom-0 z-20 flex justify-center"
           >
-            <div className="flex gap-1 rounded-full border border-line bg-bg/70 p-1 backdrop-blur">
+            <div className="glass flex gap-1 rounded-full p-1">
               {devices.map((d, i) => (
                 <button
                   key={d.id}

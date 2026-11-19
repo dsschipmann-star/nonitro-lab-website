@@ -9,15 +9,6 @@ import { whatsappLink, whatsappMessages } from "@/lib/whatsapp";
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -26,14 +17,9 @@ export function Header() {
   }, [open]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-line bg-bg/70 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent"
-      }`}
-    >
-      <div className="container flex h-16 items-center justify-between gap-6">
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
+      {/* Barra flutuante de vidro */}
+      <div className="glass pointer-events-auto mx-auto flex h-14 max-w-6xl items-center justify-between gap-6 rounded-full pl-5 pr-2">
         <Link
           href="#inicio"
           className="flex items-center"
@@ -69,7 +55,7 @@ export function Header() {
             href={whatsappLink(whatsappMessages.default)}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-sm"
+            className="btn-primary px-5 py-2.5 text-sm"
           >
             Solicitar orçamento
             <ArrowRight className="size-4" aria-hidden="true" />
@@ -82,28 +68,29 @@ export function Header() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Fechar menu" : "Abrir menu"}
-          className="inline-flex size-10 items-center justify-center rounded-lg border border-line bg-bg-surface/60 text-text transition-colors hover:border-line-strong md:hidden"
+          className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-text transition-colors hover:bg-white/10 md:hidden"
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Menu do celular: painel de vidro separado da barra, porque o
+          desfoque não funciona dentro de outro elemento desfocado */}
       <div
         id="mobile-menu"
-        className={`md:hidden ${open ? "block" : "hidden"}`}
+        className={`pointer-events-auto md:hidden ${open ? "block" : "hidden"}`}
       >
-        <div className="border-t border-line bg-bg/95 backdrop-blur-xl">
+        <div className="glass glass-strong mx-auto mt-2 max-w-6xl rounded-3xl">
           <nav
             aria-label="Menu móvel"
-            className="container flex flex-col gap-1 py-6"
+            className="flex flex-col gap-1 p-3"
           >
             {siteConfig.nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-base text-text-muted transition-colors hover:bg-bg-surface hover:text-text"
+                className="rounded-2xl px-4 py-3 text-base text-text-muted transition-colors hover:bg-white/10 hover:text-text"
               >
                 {item.label}
               </a>
@@ -113,7 +100,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="btn-primary mt-3 w-full justify-center"
+              className="btn-primary mt-2 w-full justify-center"
             >
               Solicitar orçamento
               <ArrowRight className="size-4" aria-hidden="true" />

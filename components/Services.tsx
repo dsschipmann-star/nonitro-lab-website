@@ -189,7 +189,7 @@ export function Services() {
           type="button"
           onClick={() => go(-1)}
           aria-label="Categoria anterior"
-          className="absolute left-0 top-1/2 z-20 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-line-strong bg-bg/70 text-text backdrop-blur transition-colors hover:bg-bg-raised sm:left-4"
+          className="absolute left-0 top-1/2 z-20 inline-flex size-11 -translate-y-1/2 items-center justify-center glass-button rounded-full text-text sm:left-4"
         >
           <ChevronLeft className="size-5" aria-hidden="true" />
         </button>
@@ -197,7 +197,7 @@ export function Services() {
           type="button"
           onClick={() => go(1)}
           aria-label="Próxima categoria"
-          className="absolute right-0 top-1/2 z-20 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-line-strong bg-bg/70 text-text backdrop-blur transition-colors hover:bg-bg-raised sm:right-4"
+          className="absolute right-0 top-1/2 z-20 inline-flex size-11 -translate-y-1/2 items-center justify-center glass-button rounded-full text-text sm:right-4"
         >
           <ChevronRight className="size-5" aria-hidden="true" />
         </button>
